@@ -1,0 +1,23 @@
+What is WebTable in Selenium?
+	A Web table or data table is a logical way of representing data on the web in the form of rows and columns i.e in tabular form
+	
+Below are the basic tags that are generally used to define HTML tables:
+
+	<table> tag for creating HTML table.
+	The <tbody> tag provides a container for rows and columns.
+	<th> tag is for table heading
+	<tr> defines rows in an HTML table.
+	<td> define the data/cell of an HTML table.
+	
+What are the different types of Web Tables In Selenium?
+	There are two types of web tables in Selenium:
+		Static Web Table: 
+			This type of tabular representation has fixed data in the rows and columns and the rows and columns are definite.
+			Eg.table of months,table of days, etc.
+		Dynamic Web Table: 
+			Dynamic table has dynamic data as rows and columns are not fixed and they keep on increasing or decreasing basis the data. 
+			For Eg: Sales table, Student table. Mostly dynamic tables are more popular in use.
+	
+			
+nflows mail enga??
+send me this screeenshots

@@ -1,0 +1,47 @@
+1. Why do we need Xpath. Why not other locators like id,name,className, linkText etc.
+	We go for xpath when we are not able to locate the element using id, name, class name or if none of the attribute are present in element
+2. Using browser plugins alone.?
+	When the contents are dyanamic. THey get failed
+3. What is Xpath..?
+	XPath is used to find the location of any element on a webpage using HTML DOM structure
+6. Types:
+	1. Absolute
+	2. Relative
+7. Idenditification Strategies:
+      i) Locating elements with respect of elements and attribute: 	
+		a. Locating elements with known attribute
+  			Syntax: //*[@attributeName='value']
+			EG: //*[@Name='firstName']
+		b. Locating elements with known element and attribute
+			Syntax: //tagName[@attributeName='value']
+			EG: //input[@Name='firstName']			
+		c. Locating elements with known visible text (extract match)
+			Syntax: //tagName[text()='exact text']
+			EG; //*[text()='Bala']	
+		d. Locating elements with part of the visible text (partial match)
+			Syntax: //tagName[contains(text(),'part of text')]
+		e. Locating elements with multiple attribute
+			Syntax: //tagName[@attribute1='value1'][@attribute2='value2'][@attribute3='value3']
+		f. Locating elements with starting visible text is known (starts-with using text())
+			Syntax: //tagName[starts-with(text(),'starting text')]
+		g. Locating elements with known dyanamic attributes values (starts-with and contains using attributes)
+			Syntax: //tagName[starts-with(@attributeName,'fixed prefix of the value')]
+			Syntax: //tagName[contains(@attributeName,'part of the value')]
+
+	ii) Locating elements realtive to known element:
+		a. Locating a parent element
+			Syntax: //<KnownXpath>/parent::tagName
+		b. Locating a child element
+			Syntax: //<KnownXpath>/child::tagName
+		c. Locating ancestors of known element
+			Syntax: //<KnownXpath>/anchestor::tagName or //<KnownXpath>/anchestor::*
+		d. Locating Descendant of known element
+			Syntax: //<KnownXpath>/Descendant::tagName or //<KnownXpath>/Descendant::*
+		e. Locating following elements
+			//<KnownXpath>/following::tagName
+		f. Locating preceding elements
+			//<KnownXpath>/preceding::tagName
+		g. Locating following-sibling elements
+			//<KnownXpath>/following-sibling::tagName
+		h. Locating preceding-sibling elements
+			//<KnownXpath>/preceding-sibling::tagName

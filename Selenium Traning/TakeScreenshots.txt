@@ -1,0 +1,33 @@
+There are two ways where we can take a screenshot.
+	- One is TakesScreenShot Interface provided by Selenium itself. The problem with this built-in option is, it can take the snap on only a
+particular portion but not the entire screen. If there are any alerts present on the screen and if we want to take the screenshot then,TakesScreenshot is not suitable. 
+
+	- We can use the Robot class's createScreenCapture method to capture the full-screen screenshot.
+	
+Steps to take Screenshot using TakesScreenshot interface:
+	1. Convert web driver object to TakeScreenshot
+	2. call GetScreenshotAs method and store it in a file
+	3. Create an image file in any location
+	4. copy the screenshot in destination File (image) file, using FileUtils.(commons-io) or we can use Selenium's FileHandler as well to copy the file.
+	
+Code Snippet to take screenshot:(Using TakesScreenShot)	
+	TakesScreenshot screenshot=(TakesScreenshot) driver.get;
+		File scrFile=screenshot.getScreenshotAs(OutputType.FILE);
+		File desFile=new File("C:\\Users\\venkatesak");
+		FileHandler.copy(scrFile, desFile);
+
+Steps to take Screenshot using Robot class:
+	1) Create an object of Robot class.
+	2) Get the screen size and store.
+	3) Use the Rectangle class and pass the screen size.
+	4) Use createScreenCapture(rectangle) of Robot class and capture screenshot.(source)
+	5) Define destination path file for the screenshot.
+	6) Write temp file into the destination file. (Imagelo)
+
+Code Snippet to take screenshot:(Using Robot Class)	
+	Robot robot = new Robot();
+		Dimension screenSize=Toolkit.getDefaultToolkit().getScreenSize();
+		Rectangle rectangle= new Rectangle(screenSize);
+		BufferedImage source=robot.createScreenCapture(rectangle);
+		File destinationFile=new File("D://robotsnap.png");
+		ImageIO.write(source, "png", destinationFile);

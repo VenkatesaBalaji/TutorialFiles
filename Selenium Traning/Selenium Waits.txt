@@ -1,0 +1,56 @@
+Waits in SELENIUM
+
+1) Why do we get exceptions when interacting with web elements?
+Reasons:
+    1. The Element we try to interact/find is not at all present in the DOM.
+    2. Element is present in DOM but NOT visible.
+    3. Element is present in DOM but NOT interactable (enabled)
+
+2) What to do in this case?
+   Known solution for us: Thread.sleep()
+
+3) Why to use Selenium Waits over thread.sleep() ?
+4) What are selenium waits?
+5) Types of Waits in Selenium -> Implicit, Explicit, Fluent
+6) Which one is better? Pros and cons
+
+
+Explicit Wait:
+ It allows us to command the webdriver to wait until several conditions are met.
+
+How to use:
+    1.Create WebDriverWait instance (Object) 
+    2. wait until (condition to be met)
+
+Some conditions:
+	1.elementToBeClickable()
+	2.elementToBeSelected()
+	3.presenceOfElement Located ()
+	4.textToBePresentInElement()
+	5.alertIsPresent() and so on.....
+
+how is it better from implicit wait:
+
+	- (IW) only checks the presence of element on (DOM) WebPage that's all.
+	- if elements are hidden or any other condition then it will not handle and it will fail the script. but here, we can handle more predefined conditions.
+	- If there is a network issue and if ur application always performs slow then, IW is better.
+
+Can we mix implicit /Explicit together?
+ Yes and NO
+
+
+Fluent Wait 
+	- By setting the frequency, we are reducing the burden of default polling.
+
+How to use:
+	 Wait wait= new Fluent Wait (driver).withTimeout(30, SECONDS).pollingEvery(3, SECONDS).ignoring(Exception.class); deprecated
+
+Currently have to use
+ 	.withTimeout (Duration.ofSeconds (30))
+	.pollingEvery (Duration.of Seconds (2))
+	.ignoring (NoSuchElementException.class);
+
+Apply method
+	WebElement profile = wait.until (new Function () {
+ 	public WebElement apply (WebDriver driver) {
+	return driver findElement (By xpath("Xpath here"):
